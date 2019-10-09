@@ -19,6 +19,11 @@ app.post('/alunos', (req, res) => {
     res.send('Aluno adicionado com sucesso!');
 });
 
+app.get('/alunos/:id', (req, res) => {
+    const idAluno = req.params.id;
+    res.json(bd.getAlunoPorId(idAluno));
+})
+
 app.get('/professores', (req, res) => {
     res.json(bd.getP());
 });
@@ -27,6 +32,11 @@ app.post('/professores', (req, res) => {
     bd.addPr(req.body);
     res.send('Professor adicionado com sucesso!');
 });
+
+app.get('/professores/:id', (req, res) => {
+    const idProfessor = req.params.id;
+    res.json(bd.getProfessorPorId(idProfessor));
+})
 
 app.listen(3000, () => console.log('Servidor online na porta 3000!'));
 

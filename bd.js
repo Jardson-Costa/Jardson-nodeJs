@@ -8,6 +8,9 @@ class BancoDeDados {
         return this.alunos;
     };
 
+    getAlunoPorId(id) {
+        return this.alunos.filter((aluno) => aluno.id == id);
+    };
 
     addAl(aluno) {
         this.alunos.push(aluno);
@@ -19,6 +22,10 @@ class BancoDeDados {
 
     addPr(professor) {
         this.professores.push(professor);
+    };
+
+    getProfessorPorId(id) {
+        return this.professores.filter((professor) => professor.id == id);
     };
 };
 
